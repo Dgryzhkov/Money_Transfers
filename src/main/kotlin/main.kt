@@ -1,26 +1,21 @@
-const val COMISSION_PERCENT_MASTERCAR_MAESTRO = 0.006
-const val COMISSION_PRECENT_VISA_WORLD = 0.0075
-const val FIXED_COMISSION_MASTER_MAESTRO= 20.0
-const val FIXED_COMISSION_VISA_WORLD= 35.0
 const val MASTER_CARD = "Mastercard"
 const val MAESTRO = "Maestro"
 const val VISA = "VISA"
-const val WORLD="Мир"
+const val WORLD = "Мир"
 const val VK_PAY = "VK Pay"
-const val NO_COMISSION_MAX_MASTERCARD_MAESTRO = 75000.00
-
-const val MAX_MONEY_TRANSFER_MASTERCARD_MAESTRO = 600_000.00
-const val MAX_MONEY_TRANSFER_VKPAY = 40_000.00
-
-const val RUB_COP = 100
-
-val previousTransfer =0
-
-val moneyTransfer = 600_000
-val card_type=VK_PAY
-
+const val RUB_COP = 100 // для перевода копеек в рубли
 
 fun main() {
-limit()
+    val previousTransfer = 0
+    val moneyTransfer =RUB_COP* 80_00 // введи сумму перевода в рублях
+    val card_type = VK_PAY
+    val comision = limit(moneyTransfer, previousTransfer, card_type)
 
+    when (comision) {
+        MAX_MONEY_TRANSFER_VKPAY.toInt() ->
+            println("Первышены суммы перевода ${(MAX_MONEY_TRANSFER_VKPAY / RUB_COP).toInt()} рублей")
+        MAX_MONEY_TRANSFER_ALL_CARD_EXCEPT_VK.toInt() ->
+            println("Первышены суммы перевода ${(MAX_MONEY_TRANSFER_ALL_CARD_EXCEPT_VK / RUB_COP).toInt()} рублей")
+        else -> println(" комиссия составляет ${(comision / RUB_COP)} рублей")
+    }
 }
