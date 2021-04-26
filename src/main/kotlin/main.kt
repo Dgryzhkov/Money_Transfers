@@ -10,9 +10,9 @@ const val RUB_COP = 100 // для перевода копеек в рубли
 
 fun main() {
     val previousTransfer = 0
-    val moneyTransfer =RUB_COP* 80000 // введи сумму перевода в рублях
-    val card_type = MASTER_CARD
+    val moneyTransfer =RUB_COP* 39000*3 // введи сумму перевода в рублях
+    val cardType =MASTER_CARD
 
 
-println("Комиссия составлет ${comission(moneyTransfer, previousTransfer,card_type)} рублей")
+println("""Комиссия составлет ${comission(moneyTransfer, previousTransfer, cardType)} руб""")
 }
