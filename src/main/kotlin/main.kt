@@ -15,15 +15,13 @@ const val NO_COMISSION_MAX_MASTERCARD_MAESTRO = 75_000*RUB_COP
 
 
 fun main() {
-   // val previousTransfer = 0
+   val previousTransfer = 0
     val moneyTransfer =RUB_COP* 70000 // введи сумму перевода в рублях
-    //val cardType=VISA
+    val cardType=MASTER_CARD
 
 
-/*
 println("Комиссия составлет ${comission(moneyTransfer, previousTransfer, cardType)} " +
         "коп (${(comission(moneyTransfer, previousTransfer, cardType))/RUB_COP} руб)")
-*/
 
 
 }
